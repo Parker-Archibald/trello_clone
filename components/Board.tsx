@@ -100,11 +100,8 @@ const Board = () => {
                 {...provided.droppableProps}
                 ref={provided.innerRef}
               >
-                {Array.from(board.columns.entries()).map((entry, index) => (
-                  <>   
-                  {/* {console.log(entry[0], entry[1])} */}
-                  <Column key={entry[0]} id={entry[0]} todos={entry[1].todos} index={index} />
-                  </>
+                {Array.from(board.columns.entries()).map((entry: any, index) => (
+                    <Column key={entry[0]} id={entry[0]} todos={entry[1].todos} index={index} />
                 ))}
     
                 {provided.placeholder}
