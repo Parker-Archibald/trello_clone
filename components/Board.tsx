@@ -91,20 +91,28 @@ const Board = () => {
         }
       };
 
-    return (
+      return (
         <DragDropContext onDragEnd={handleOnDragEnd}>
-            <Droppable droppableId='board' direction='horizontal' type='column'>
-                {(provided) => (
-                    <div {...provided.droppableProps} ref={provided.innerRef} className='grid grid-cols-1
-                    md:grid-cols-3 gap-5 max-w-7xl my-20 mx-10'>
-                        {Array.from(board.columns.entries()).map(([id, column], index) => (
-                            <Column key={id} id={id} todos={column.todos} index={index}/>
-                        ))}
-                    </div>
-                )}
-            </Droppable>
+          <Droppable droppableId="board" direction="horizontal" type="column">
+            {(provided) => (
+              <div
+                className="grid grid-cols-1 md:grid-cols-3 gap-5 p-5 max-w-7xl mx-auto"
+                {...provided.droppableProps}
+                ref={provided.innerRef}
+              >
+                {Array.from(board.columns.entries()).map((entry, index) => (
+                  <>   
+                  {/* {console.log(entry[0], entry[1])} */}
+                  <Column key={entry[0]} id={entry[0]} todos={entry[1].todos} index={index} />
+                  </>
+                ))}
+    
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
         </DragDropContext>
-    )
+      );
 }
 
 export default Board;
