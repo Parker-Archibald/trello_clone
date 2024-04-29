@@ -27,7 +27,7 @@ const Board = () => {
     
         // Handle column drag
         if (type === "column") {
-          const entries: column = Array.from(board.columns.entries());
+          const entries: any = Array.from(board.columns.entries());
           const [removed] = entries.splice(source.index, 1);
           entries.splice(destination.index, 0, removed);
           
