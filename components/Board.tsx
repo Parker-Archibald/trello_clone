@@ -32,15 +32,14 @@ const Board = () => {
           entries.splice(destination.index, 0, removed);
           
           const rearrangedColumns = new Map(entries);
-          console.log(rearrangedColumns)
           setBoardState({ ...board, columns: rearrangedColumns });
           return;
         }
     
         // This step is needed as the indexes are stored as numbers 0,1,2 etc. instead of id's with DND library
         const columns = Array.from(board.columns);
-        const startColIndex = columns[Number(source.droppableId)];
-        const finishColIndex = columns[Number(destination.droppableId)];
+        const startColIndex: any = columns[Number(source.droppableId)];
+        const finishColIndex: any = columns[Number(destination.droppableId)];
     
         const startCol: Column = {
           id: startColIndex[0],
