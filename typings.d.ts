@@ -1,5 +1,5 @@
 interface BoardState {
-    column: Map<string, Column>
+    column: Map<TypedColumn, Column>
 }
 
 type TypedColumn = 'todo' | 'Inprogress' | 'done'
