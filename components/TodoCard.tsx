@@ -24,7 +24,7 @@ const TodoCard = ({todo, index, id, innerRef, draggableProps, dragHandleProps}: 
     useEffect(() => {
         if(todo.image) {
             const fetchImage = async () => {
-                const url = await getUrl(todo.image)
+                const url: any = await getUrl(todo.image)
                 if(url) {
                     setImageUrl(url.toString())
                 }
