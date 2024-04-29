@@ -4,6 +4,8 @@ interface BoardState {
 
 type TypedColumn = 'todo' | 'Inprogress' | 'done'
 
+type Board = any
+
 interface Column {
     id: TypedColumn,
     todos: Todo[]
