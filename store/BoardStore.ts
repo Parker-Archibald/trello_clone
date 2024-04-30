@@ -86,7 +86,7 @@ export const useBoardStore = create<BoardState>((set, get) => ({
      set({newTaskInput: ''})
      
      set(state => {
-      const newColumns = new Map(state.board.columns);
+      const newColumns = new Map<TypedColumn, Column>(state.board.columns);
       const newTodo: Todo | any = {
         $id, 
         $createdAt: new Date().toISOString(),
@@ -117,7 +117,7 @@ export const useBoardStore = create<BoardState>((set, get) => ({
   },
 
   deleteTask: async (taskIndex: number, todo: Todo, id: TypedColumn) => {
-    const newColumns = new Map(get().board.columns);
+    const newColumns = new Map<TypedColumn, Column>(get().board.columns);
     newColumns.get(id)?.todos.splice(taskIndex, 1);
     set({board: {columns: newColumns}})
 
