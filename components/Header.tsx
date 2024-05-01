@@ -16,8 +16,10 @@ const Header = () => {
     return (
         <header>
             <div className='flex flex-col md:flex-row items-center p-5 bg-gray-500/10 rounded-b-2xl'>
-                <Image src='https://links.papareact.com/c2cdd5' width={300} height={100} alt='' 
-                className='w-44 md:w-56 pb-10 md:pb-0 object-contain'/>
+                <div className='flex items-center gap-8 pb-10 md:pb-0'>
+                    <Image src='/dragIcon.svg' width={300} height={100} alt='' className='w-24 md:w-16'/>
+                    <p className='text-2xl font-semibold'>Drag & Drop</p>
+                </div>
 
                 <div className='absolute top-0 left-0 w-full h-96 bg-gradient-to-br
                 from-cyan-200 to-violet-400 rounded-md filter blur-3xl opacity-50 -z-50'/>
